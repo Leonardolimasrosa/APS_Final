@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* Reset básico e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Adiciona uma rolagem mais suave */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E9EDE5; /* Um tom ligeiramente mais claro para mais suavidade */
+    color: #333;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+nav {
+    background-color: #6A705F;
+    color: #FDFDFD;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav .menu li a {
+    color: #F0F0F0;
+    font-weight: 500;
+    font-size: 17px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav .menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #C8D5B9;
+    transition: width 0.3s ease;
+}
+
+nav .menu li a:hover {
+    color: #FFFFFF;
+}
+
+nav .menu li a:hover::after {
+    width: 100%;
+}
+
+/* Container Principal com Estilo Arredondado e Layout Flex */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* --- ALTERADO: ordem padrão para texto à esquerda, imagem à direita --- */
+    flex-direction: row; /* Garante que os itens fiquem lado a lado */
+    justify-content: center; /* Centraliza o flex container */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+    gap: 40px; /* Espaçamento entre os itens */
+    padding: 60px 40px;
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    background-color: #FBFEF9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+/* --- NOVO: Para alternar a ordem dos containers (imagem à esquerda, texto à direita) --- */
+/* Você pode adicionar uma classe no HTML para containers específicos, ex: <div class="container reverse-layout"> */
+.container.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.introducao {
+    /* --- ALTERADO: Definição mais flexível para o texto --- */
+    flex: 1 1 450px; /* Cresce e encolhe, com base preferencial de 450px */
+    max-width: 600px; /* Mantém um limite de largura */
+    font-size: 18px;
+    color: #444;
+}
+
+.introducao p {
+    margin-bottom: 1.25em;
+}
+
+.introducao strong {
+    font-size: 20px;
+    color: #2C3E50;
+    font-weight: 700;
+}
+
+/* Imagens */
+.imagem {
+    /* --- ALTERADO: Definição mais flexível para a imagem --- */
+    flex: 1 1 450px; /* Cresce e encolhe, com base preferencial de 450px */
+    max-width: 700px; /* Mantém um limite de largura */
+    /* Remove o flex: 1 1 400px; que estava aqui, pois já definimos acima */
+}
+
+.imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imagem img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards com Estilo Arredondado */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+.card {
+    width: 300px;
+    text-align: center;
+    background-color: #FBFEF9;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.03);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #C8D5B9;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 4px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #6A705F;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    border-top: 4px solid #595E4E;
+    margin-top: 50px;
+}
+
+footer p {
+    color: #E0E0E0;
+    margin-bottom: 0.5em;
+}
+
+footer a {
+    color: #C8D5B9;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* SCROLLBAR PERSONALIZADA (Opcional, funciona em navegadores WebKit) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #E9EDE5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) { /* Tablet */
+    .container {
+        padding: 50px 30px;
+    }
+    .cards-container {
+        padding: 30px 15px;
+    }
+    .card {
+        width: 45%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile maior / Tablet pequeno */
+    body {
+        font-size: 17px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    nav .menu {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    nav .logo h1 {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .container {
+        /* --- ALTERADO: Volta para coluna em telas pequenas --- */
+        flex-direction: column; /* Coloca os itens um abaixo do outro */
+        text-align: center; /* Centraliza o texto */
+        padding: 40px 20px;
+        margin: 30px auto;
+    }
+    /* --- NOVO: Garante que a ordem invertida seja desfeita em mobile, se a classe reverse-layout for usada --- */
+    .container.reverse-layout {
+        flex-direction: column; /* Sobrescreve para garantir que a ordem seja em coluna */
+    }
+
+    .introducao {
+        font-size: 17px;
+        width: 100%; /* Texto ocupa a largura total */
+        max-width: unset; /* Remove o limite de max-width para mobile */
+    }
+    .imagem {
+        max-width: 90%;
+        width: 100%; /* Imagem ocupa a largura total */
+        flex: none; /* Remove o flex-grow/shrink para mobile */
+    }
+    .cards-container {
+        padding: 20px 10px;
+    }
+    .card {
+        width: 85%;
+        max-width: 320px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile menor */
+    body {
+        font-size: 16px;
+    }
+    .introducao strong {
+        font-size: 18px;
+    }
+    nav .logo h1 {
+        font-size: 22px;
+    }
+    nav .menu li a {
+        font-size: 16px;
+    }
+    .container {
+        padding: 30px 15px;
+        margin: 20px auto;
+    }
+    .card {
+        padding: 15px;
+    }
+}

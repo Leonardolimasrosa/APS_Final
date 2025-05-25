@@ -1,0 +1,497 @@
+/* Font import - Garanta que esteja no início */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* Reset básico e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Adiciona uma rolagem mais suave */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #E9EDE5; /* Um tom ligeiramente mais claro que o d3d9cc original para mais suavidade */
+    color: #333;
+    line-height: 1.75;
+    font-size: 18px;
+    overflow-x: hidden; /* Previne scroll horizontal causado por algumas animações */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px; /* Consistência no border-radius */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra um pouco mais suave */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.03); /* Efeito de zoom sutil */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Tipografia Base */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #2C3E50; /* Um azul escuro/cinza para títulos, mais profissional */
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8em; } /* Ajustar conforme necessário */
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+.title{
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top: 0,75e;
+}
+
+p {
+    margin-bottom: 1.25em;
+    color: #555; /* Cor de parágrafo um pouco mais suave */
+}
+
+/* NAVBAR */
+nav {
+    background-color: #6A705F; /* Tom de verde acinzentado, similar ao seu original */
+    color: #FDFDFD; /* Branco mais suave */
+    padding: 15px 40px; /* Padding ajustado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    position: sticky; /* Navbar fixa no topo */
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+nav .logo h1 {
+    font-size: 28px; /* Ajustado */
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espaçamento aumentado */
+}
+
+nav .menu li a {
+    color: #F0F0F0; /* Cor do link um pouco mais suave */
+    font-weight: 500; /* Peso da fonte ajustado */
+    font-size: 17px; /* Tamanho ajustado */
+    position: relative; /* Para o efeito de sublinhado */
+    padding-bottom: 5px; /* Espaço para o sublinhado */
+}
+
+nav .menu li a::after { /* Efeito de sublinhado no hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #C8D5B9; /* Cor de destaque para o sublinhado */
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+nav .menu li a:hover::after {
+    width: 100%;
+}
+
+nav .menu li a:hover {
+    color: #FFFFFF; /* Cor mais clara no hover */
+}
+
+/* HEADER DE BOAS-VINDAS (se existir no seu HTML) */
+header#inicio {
+    background-color: #DDE5D6; /* Cor suave para o header */
+    color: #333;
+    text-align: center;
+    padding: 80px 40px; /* Mais padding vertical */
+    animation: fadeInHeader 1.5s ease-out;
+}
+
+header#inicio h2 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+}
+
+header#inicio p {
+    font-size: 1.2em;
+    color: #4a4a4a;
+}
+
+@keyframes fadeInHeader {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* BOTÕES DE NAVEGAÇÃO RÁPIDA */
+.navegacao-rapida {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #F7F9F5; /* Fundo suave para a seção de botões */
+}
+
+.navegacao-rapida h2 {
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    color: #3E4A3A; /* Tom de verde escuro */
+}
+
+.botoes-navegacao .btn-navegacao {
+    display: inline-block;
+    margin: 8px 12px;
+    padding: 14px 28px;
+    background: linear-gradient(145deg, #7D8A6E, #6A705F); /* Gradiente sutil */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    font-weight: 500;
+    font-size: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+}
+
+.botoes-navegacao .btn-navegacao:hover {
+    transform: translateY(-3px) scale(1.02); /* Leve elevação e aumento */
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #8AA278, #767D6B); /* Gradiente mais claro no hover */
+}
+
+
+/* CONTAINERS E SEÇÕES */
+.container, .container-textual {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Melhor distribuição */
+    align-items: center;
+    gap: 40px; /* Espaçamento ajustado */
+    padding: 70px 40px; /* Padding aumentado */
+    animation: fadeInUpSection 1.2s ease-out forwards; /* 'forwards' mantém o estado final */
+    opacity: 0; /* Começa invisível para a animação */
+}
+
+/* Para aplicar a animação com delay escalonado (precisaria de JS para adicionar classes dinamicamente, ou aplicar a seções específicas) */
+/* Se for só para uma seção genérica, pode manter como está acima */
+/*
+.section-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+*/
+
+.container-textual {
+    max-width: 900px; /* Para seções de texto puro */
+    margin: 0 auto; /* Centralizar */
+    padding: 50px 20px;
+}
+
+.container-textual ul {
+    list-style-position: inside;
+    padding-left: 20px;
+    margin-bottom: 1.5em;
+}
+
+.container-textual ul li {
+    margin-bottom: 0.8em;
+    color: #454545;
+}
+
+
+/* ESTILO PERSONALIZADO DOS TÍTULOS (como no CSS original do usuário) */
+.introducao#parte1 p { /* Este seletor é muito específico, certifique-se que #parte1 é único e necessário */
+    font-size: 32px; /* Levemente ajustado */
+    font-weight: 500;
+    color: #222; /* Um pouco mais suave que #111 */
+    line-height: 1.5;
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+}
+
+.introducao { /* Estilo geral para .introducao, pode ser sobreposto pelo ID específico */
+    max-width: 600px;
+    font-size: 20px; /* Ajustado */
+    font-weight: 400; /* Normalizado, o ID #parte1 pode sobrescrever */
+}
+
+.introducao#parte2 strong {
+    font-size: 32px; 
+    font-weight: 700; 
+    color: #2a2a2a;
+    display: inline-block;
+    margin: 20px 0 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.introducao#parte2 {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.imagem {
+    max-width: 900px; 
+    flex: 1 1 600px; 
+}
+
+
+.passoapasso {
+    background-color: #C8D5B9; 
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.passoapasso .destaques { 
+    margin-bottom: 60px;
+    font-size: 2.4em;
+    color: #3E4A3A; 
+    font-weight: 700;
+}
+
+
+.passoapasso > div { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.passoapasso div > div { 
+    background-color: #FBFEF9; 
+    border-radius: 16px;
+    padding: 35px; 
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 320px; 
+    font-size: 16px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: left; 
+    border: 1px solid #E0E0E0;
+}
+
+.passoapasso div > div:hover {
+    transform: translateY(-12px) scale(1.02); 
+    box-shadow: 0 12px 25px rgba(62, 74, 58, 0.2); 
+}
+
+.passoapasso img { 
+    width: 70px !important; 
+    height: 70px !important;
+    margin: 0 auto 20px auto; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.passoapasso h3 {
+    margin-top: 0; 
+    margin-bottom: 15px;
+    font-size: 1.4em; 
+    color: #4A5C43; 
+    font-weight: 700;
+}
+
+
+footer {
+    background-color: #6A705F; 
+    color: #E0E0E0; 
+    text-align: center;
+    padding: 40px 20px; 
+    font-size: 15px;
+    line-height: 1.7;
+    border-top: 4px solid #595E4E; 
+}
+footer p {
+    color: #E0E0E0;
+    margin-bottom: 0.5em;
+}
+footer a {
+    color: #C8D5B9; 
+    font-weight: 500;
+}
+footer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+
+@keyframes fadeInUpSection {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.animated-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated-item.in-view { /* Classe a ser adicionada com JS quando o elemento estiver visível */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* SCROLLBAR PERSONALIZADA (Opcional, funciona em navegadores WebKit) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #E9EDE5; /* Cor do corpo */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 992px) { /* Tablet */
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+
+    .container, .container-textual {
+        padding: 50px 30px;
+    }
+    .passoapasso {
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile maior / Tablet pequeno */
+    body {
+        font-size: 17px;
+    }
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+
+    nav {
+        flex-direction: column;
+        align-items: center; /* Centralizar logo e menu */
+        padding: 15px 20px;
+    }
+
+    nav .logo h1 {
+        margin-bottom: 10px; /* Espaço entre logo e menu */
+    }
+
+    nav .menu {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+        width: 100%;
+        align-items: center;
+    }
+    nav .menu li a::after { /* Remover efeito de sublinhado no mobile se preferir */
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+    .introducao#parte1 p { /* Centralizar o texto no mobile se fizer sentido */
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .imagem {
+        max-width: 90%; /* Ajustar imagem */
+        margin: 0 auto;
+    }
+
+    .passoapasso {
+        padding: 50px 20px;
+    }
+    .passoapasso .destaques {
+        font-size: 2em;
+    }
+    .passoapasso div > div { /* Cards do passo a passo */
+        width: 90%; /* Ocupar mais largura */
+        max-width: 350px; /* Limite máximo */
+        padding: 25px;
+    }
+    .passoapasso img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .botoes-navegacao .btn-navegacao {
+        padding: 12px 20px;
+        font-size: 0.95em;
+        margin: 5px 8px;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile menor */
+    body {
+        font-size: 16px;
+    }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.3em; }
+
+    nav .logo h1 {
+        font-size: 24px;
+    }
+    nav .menu li a {
+        font-size: 16px;
+    }
+    .introducao#parte1 p {
+        font-size: 24px;
+    }
+    .passoapasso .destaques {
+        font-size: 1.8em;
+    }
+    .passoapasso div > div {
+        padding: 20px;
+    }
+     header#inicio {
+        padding: 60px 20px;
+    }
+    header#inicio h2 {
+        font-size: 2.2em;
+    }
+    header#inicio p {
+        font-size: 1.1em;
+    }
+}
