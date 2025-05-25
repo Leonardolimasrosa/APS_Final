@@ -9,7 +9,7 @@ body{
     height: 100%;
 }
 
-a{
+a{  
     text-decoration: none;
     color: white;
     transition: 0.3s;
@@ -33,6 +33,7 @@ nav{
     align-items: center;
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     height: 8vh;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .menu{
@@ -54,7 +55,7 @@ h1{
     display: flex;
     margin: 15px;
     padding: 0 10px;
-  }
+}
 
 .introducao{
     width: 80%;
@@ -81,6 +82,8 @@ hr{
 
 footer{
     display: flex;
-    background-color: #fff;
+    background-color: #6B735C;
     justify-content: center;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4);
+    color: white;
 }

@@ -33,6 +33,7 @@ nav{
     align-items: center;
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     height: 12vh;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .menu{
@@ -93,6 +94,8 @@ ol{
 .plantas{
     height: 300px;
     width: auto;
+    border: 2px solid #58731F;
+    border-radius: 10px;
 }
 
 .curiosidades{
@@ -119,3 +122,13 @@ footer{
     height: 110px;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4);
 }
+
+.plantas {
+  transition: transform 0.3s ease;
+}
+
+.plantas:hover {
+  transform: scale(1.03);
+}
+
+
