@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #B8BFA8;
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+a:hover{
+    color: #8AA6A3;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav{
+    background-color: #6B735C;
+    display: flex;
+    margin: 0 0 10px 0;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    height: 8vh;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+}
+
+.menu li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+h1{
+    color: white;
+    margin-left: 32px;
+}
+
+.container {
+    display: flex;
+    margin: 15px;
+    padding: 0 10px;
+  }
+
+.introducao{
+    width: 80%;
+    height: auto;
+    margin: 0 10px;
+    padding-left: 10px;
+    flex: 1;
+    font-family:'Helvetica';
+}
+
+ol{
+    margin: 0 15px;
+}
+
+.imagem{
+    display: flex;
+    justify-content: center;
+}
+
+.plantas{
+    height: 300px;
+    width: auto;
+}
+
+.curiosidades{
+    flex: 1;
+    justify-content: center;
+}
+
+.destaques{
+    color: #58731F;
+    text-align: center;
+    margin: 10px 0;
+}
+
+hr{
+    border: 1px solid black;
+}
+
+footer{
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+}
