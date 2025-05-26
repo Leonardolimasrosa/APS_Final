@@ -29,7 +29,6 @@ nav {
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
     position: sticky;
     top: 0;
@@ -47,6 +46,7 @@ nav .menu {
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 nav .menu li a {
@@ -87,7 +87,7 @@ nav .menu li a:hover::after {
     justify-content: center; /* Centraliza o flex container */
     align-items: center; /* Alinha itens ao centro verticalmente */
     gap: 40px; /* Espaçamento entre os itens */
-    padding: 60px 40px;
+    padding: 30px 40px;
     animation: fadeInUp 1s ease-out forwards;
     opacity: 0;
     background-color: #FBFEF9;

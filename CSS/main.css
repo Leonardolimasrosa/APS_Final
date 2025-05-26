@@ -66,7 +66,7 @@ p {
 nav {
     background-color: #6A705F; /* Tom de verde acinzentado, similar ao seu original */
     color: #FDFDFD; /* Branco mais suave */
-    padding: 15px 40px; /* Padding ajustado */
+    padding: 15px 25px; /* Padding ajustado */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,12 +83,14 @@ nav .logo h1 {
     font-weight: 700;
     letter-spacing: 1px;
     color: #FFFFFF;
+    margin-top: 18px;
 }
 
 nav .menu {
     list-style: none;
     display: flex;
     gap: 30px; /* Espaçamento aumentado */
+    top: -45px;
 }
 
 nav .menu li a {
@@ -485,7 +487,7 @@ footer a:hover {
     .passoapasso div > div {
         padding: 20px;
     }
-     header#inicio {
+    header#inicio {
         padding: 60px 20px;
     }
     header#inicio h2 {
